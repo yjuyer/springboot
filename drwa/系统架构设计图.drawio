@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-06-06T00:00:00.000Z" agent="Claude" version="21.0.0">
+  <diagram id="architecture" name="系统架构设计图">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1000" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- ==================== 标题 ==================== -->
+        <mxCell id="title" value="新能源汽车租赁平台系统架构图" style="text;html=1;align=center;verticalAlign=middle;fontSize=20;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="450" y="20" width="400" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- ==================== 第一层：用户层 ==================== -->
+        <mxCell id="layer1_border" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="100" y="80" width="1100" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="layer1_label" value="用户层" style="text;html=1;align=left;verticalAlign=top;fontSize=14;fontStyle=1;fontColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="115" y="85" width="80" height="25" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="user_pc" value="PC端浏览器&#xa;（Chrome/Edge/Firefox）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#6c8ebf;fontSize=12;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="160" y="115" width="200" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="user_mobile" value="移动端浏览器&#xa;（响应式适配）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#6c8ebf;fontSize=12;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="440" y="115" width="200" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="user_admin" value="管理端浏览器&#xa;（PC端管理后台）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#6c8ebf;fontSize=12;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="720" y="115" width="200" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="user_alipay" value="支付宝沙箱&#xa;（扫码支付）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#6c8ebf;fontSize=12;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="115" width="150" height="50" as="geometry"/>
+        </mxCell>
+
+        <!-- ==================== 箭头：用户层 -> 前端展示层 ==================== -->
+        <mxCell id="arrow1" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=2;strokeColor=#6c8ebf;endArrow=block;endFill=1;" edge="1" source="layer1_border" target="layer2_border" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- ==================== 第二层：前端展示层 ==================== -->
+        <mxCell id="layer2_border" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="100" y="210" width="1100" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="layer2_label" value="前端展示层（Vue 3 + Element Plus）" style="text;html=1;align=left;verticalAlign=top;fontSize=14;fontStyle=1;fontColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="115" y="215" width="300" height="25" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="fe_router" value="Vue Router&#xa;路由管理" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#82b366;fontSize=11;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="130" y="250" width="120" height="55" as="geometry"/>
+        </mxCell>
+        <mxCell id="fe_pinia" value="Pinia&#xa;状态管理" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#82b366;fontSize=11;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="270" y="250" width="120" height="55" as="geometry"/>
+        </mxCell>
+        <mxCell id="fe_pages" value="用户端页面&#xa;（15+页面）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#82b366;fontSize=11;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="410" y="250" width="130" height="55" as="geometry"/>
+        </mxCell>
+        <mxCell id="fe_admin" value="管理端页面&#xa;（6+页面）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#82b366;fontSize=11;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="560" y="250" width="130" height="55" as="geometry"/>
+        </mxCell>
+        <mxCell id="fe_axios" value="Axios&#xa;HTTP请求封装" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#82b366;fontSize=11;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="710" y="250" width="130" height="55" as="geometry"/>
+        </mxCell>
+        <mxCell id="fe_echarts" value="ECharts&#xa;数据可视化" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#82b366;fontSize=11;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="860" y="250" width="130" height="55" as="geometry"/>
+        </mxCell>
+        <mxCell id="fe_element" value="Element Plus&#xa;UI组件库" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#82b366;fontSize=11;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1010" y="250" width="130" height="55" as="geometry"/>
+        </mxCell>
+
+        <!-- ==================== 箭头：前端 -> 接口层 ==================== -->
+        <mxCell id="arrow2" value="HTTP / RESTful API / JWT认证" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=2;strokeColor=#82b366;endArrow=block;endFill=1;fontSize=11;fontColor=#333333;labelBackgroundColor=#FFFFFF;" edge="1" source="layer2_border" target="layer3_border" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- ==================== 第三层：接口层 ==================== -->
+        <mxCell id="layer3_border" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=2;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="100" y="360" width="1100" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="layer3_label" value="接口层（Spring Boot Controller + Spring Security）" style="text;html=1;align=left;verticalAlign=top;fontSize=14;fontStyle=1;fontColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="115" y="365" width="400" height="25" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="ctrl_user" value="用户端&#xa;Controller&#xa;（7个）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#d6b656;fontSize=11;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="150" y="400" width="120" height="45" as="geometry"/>
+        </mxCell>
+        <mxCell id="ctrl_admin" value="管理端&#xa;Controller&#xa;（6个）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#d6b656;fontSize=11;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="290" y="400" width="120" height="45" as="geometry"/>
+        </mxCell>
+        <mxCell id="ctrl_pay" value="支付&#xa;Controller&#xa;（支付宝回调）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#d6b656;fontSize=11;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="430" y="400" width="140" height="45" as="geometry"/>
+        </mxCell>
+        <mxCell id="ctrl_auth" value="认证&#xa;Controller&#xa;（JWT签发）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#d6b656;fontSize=11;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="590" y="400" width="130" height="45" as="geometry"/>
+        </mxCell>
+        <mxCell id="ctrl_security" value="Spring Security&#xa;权限过滤器&#xa;（JWT校验+角色控制）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#d6b656;fontSize=11;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="740" y="395" width="180" height="55" as="geometry"/>
+        </mxCell>
+        <mxCell id="ctrl_ws" value="WebSocket&#xa;通知服务&#xa;（实时推送）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#d6b656;fontSize=11;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="940" y="400" width="140" height="45" as="geometry"/>
+        </mxCell>
+
+        <!-- ==================== 箭头：接口层 -> 业务层 ==================== -->
+        <mxCell id="arrow3" value="" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=2;strokeColor=#d6b656;endArrow=block;endFill=1;" edge="1" source="layer3_border" target="layer4_border" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- ==================== 第四层：业务逻辑层 ==================== -->
+        <mxCell id="layer4_border" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;strokeWidth=2;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="100" y="490" width="1100" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="layer4_label" value="业务逻辑层（Service + 业务组件）" style="text;html=1;align=left;verticalAlign=top;fontSize=14;fontStyle=1;fontColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="115" y="495" width="300" height="25" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="svc_order" value="订单服务&#xa;（状态机管理）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#9673a6;fontSize=11;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="130" y="535" width="130" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="svc_vehicle" value="车辆服务" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#9673a6;fontSize=11;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="280" y="535" width="110" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="svc_pay" value="支付服务&#xa;（支付宝对接）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#9673a6;fontSize=11;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="410" y="535" width="130" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="svc_deposit" value="押金服务" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#9673a6;fontSize=11;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="560" y="535" width="110" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="svc_member" value="会员服务&#xa;（等级+积分）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#9673a6;fontSize=11;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="690" y="535" width="130" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="svc_auth" value="认证服务&#xa;（OCR+活体）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#9673a6;fontSize=11;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="840" y="535" width="130" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="svc_lock" value="Redis&#xa;分布式锁&#xa;（防重复租赁）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#9673a6;fontSize=11;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="990" y="530" width="140" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- ==================== 箭头：业务层 -> 数据访问层 ==================== -->
+        <mxCell id="arrow4" value="" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=2;strokeColor=#9673a6;endArrow=block;endFill=1;" edge="1" source="layer4_border" target="layer5_border" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- ==================== 第五层：数据访问层 ==================== -->
+        <mxCell id="layer5_border" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;strokeWidth=2;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="100" y="640" width="1100" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="layer5_label" value="数据访问层（MyBatis-Plus Mapper + Redis Template）" style="text;html=1;align=left;verticalAlign=top;fontSize=14;fontStyle=1;fontColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="115" y="645" width="450" height="25" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="mapper_vehicle" value="Vehicle&#xa;Mapper" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#b85450;fontSize=11;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="140" y="685" width="100" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="mapper_order" value="RentalOrder&#xa;Mapper" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#b85450;fontSize=11;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="260" y="685" width="100" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="mapper_user" value="SysUser&#xa;Mapper" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#b85450;fontSize=11;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="380" y="685" width="100" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="mapper_deposit" value="Deposit&#xa;Mapper" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#b85450;fontSize=11;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="500" y="685" width="100" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="mapper_coupon" value="Coupon&#xa;Mapper" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#b85450;fontSize=11;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="620" y="685" width="100" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="mapper_store" value="Store&#xa;Mapper" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#b85450;fontSize=11;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="740" y="685" width="100" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="redis_util" value="RedisTemplate&#xa;缓存/锁/会话" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#b85450;fontSize=11;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="880" y="680" width="140" height="50" as="geometry"/>
+        </mxCell>
+
+        <!-- ==================== 箭头：数据访问层 -> 数据存储层 ==================== -->
+        <mxCell id="arrow5" value="" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=2;strokeColor=#b85450;endArrow=block;endFill=1;" edge="1" source="layer5_border" target="layer6_border" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- ==================== 第六层：数据存储层 ==================== -->
+        <mxCell id="layer6_border" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF;strokeColor=#333333;strokeWidth=2;arcSize=8;" vertex="1" parent="1">
+          <mxGeometry x="100" y="770" width="1100" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="layer6_label" value="数据存储层" style="text;html=1;align=left;verticalAlign=top;fontSize=14;fontStyle=1;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="115" y="775" width="100" height="25" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="db_mysql" value="MySQL 8.0&#xa;nev_rental 库&#xa;（12张核心业务表）" style="shape=cylinder3;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;size=10;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="200" y="800" width="180" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="db_redis" value="Redis&#xa;（缓存/分布式锁/&#xa;JWT会话/支付状态）" style="shape=cylinder3;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;size=10;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="500" y="800" width="180" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="db_file" value="文件存储&#xa;（车辆图片/&#xa;身份证照片/驾驶证）" style="shape=cylinder3;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;size=10;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="800" y="800" width="180" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- ==================== 定时任务（右侧独立） ==================== -->
+        <mxCell id="task_box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=1;arcSize=8;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="1250" y="490" width="150" height="200" as="geometry"/>
+        </mxCell>
+        <mxCell id="task_label" value="定时任务&#xa;（Scheduled）" style="text;html=1;align=center;verticalAlign=top;fontSize=12;fontStyle=1;fontColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="1260" y="495" width="130" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="task1" value="自动退押金" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#d6b656;fontSize=10;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1270" y="535" width="110" height="35" as="geometry"/>
+        </mxCell>
+        <mxCell id="task2" value="信用分更新" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#d6b656;fontSize=10;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1270" y="580" width="110" height="35" as="geometry"/>
+        </mxCell>
+        <mxCell id="task3" value="免费取消次数重置" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#d6b656;fontSize=10;arcSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1265" y="625" width="120" height="35" as="geometry"/>
+        </mxCell>
+        <mxCell id="arrow_task" style="edgeStyle=orthogonalEdgeStyle;strokeWidth=1;strokeColor=#d6b656;endArrow=block;endFill=1;dashed=1;" edge="1" source="task_box" target="layer4_border" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

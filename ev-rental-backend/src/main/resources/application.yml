@@ -1,0 +1,58 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/nev_rental?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: "040414"
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      password: ""
+      database: 0
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+# MyBatis-Plus
+mybatis-plus:
+  mapper-locations: classpath:mapper/**/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      logic-delete-field: deleted
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+
+# JWT
+jwt:
+  secret: ev-rental-platform-jwt-secret-key-2024-must-be-long-enough
+  expiration: 86400000
+  header: Authorization
+  prefix: "Bearer "
+
+# 文件上传
+file:
+  upload-path: D:/ev-rental/upload/
+
+# 支付宝沙箱配置
+# 沙箱环境申请：https://open.alipay.com 账号登录后 -> 控制台 -> 沙箱
+alipay:
+  app-id: 9021000164649259
+  private-key: MIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDnr7Te91gFshZCb9SDAf1n5WqVfBgYsySl7cvENf6yzrMVE69alpohd5RO5FGKIN0+06vSOoZrQRPwvXhkhHCR+xO6DhF2F6LtZ9RRGj/bmGKLNixCMzb+PGEDvdzJ8MHPA272+QHCph2hnMDr7GtIQkHaeTHgje/XTlnYS7yZYMmoX/z8Xx4DK+YJaOhhXBgyH2E+VDI+bkI7Ufp4bZS6s3ND+bEBnOo7Gm2WUhlcBK47KLXq+A2Ng6bulvXNoIG4llWS0SG1HOL6m2+NGzHmTyip9pCR0Ht+4yZm7a/JTgVcJpidEt0feM+Sh0ZNm97xn8JjnMto8rBRvRMJ/5hxAgMBAAECggEBANa6XmQX0hjVSRQiGU+iVH4qfnI1JRAfWGQA1M3xTTHjqM5sBCVtV0SVU3sa2QewFd3YyHJ7k4FsO1LwB9kBdmOV1F6oEz7kATkO9hSEw5J+1TY46yQf22QeCbwyB6OR4849XGbBugPxeZ0Dbzo5T+UUo3wcv0Fjy1o9X7+70fxDmHiW+AhMbJz0IF2EU2IUCJRCg2nGKHeFQ3dRrdqMgJmV2GU2xJP+Uku8RBi10wS+65lwcyjCiCN9M6TW+pe2cCcAFBL3eQKXNuVBqGrUInfQvzUINAvx4/QVnPqvZnrB5aVajahXUixpOcANiZCHlrxQbUxwSXRz1QMhMZLWGQECgYEA+3GBib5/+iD1BA2G7HRjQG1Z7OyoFUELIoJifCgwV/UnQNTxpvFqyOrILz0VIjQcwPjN3nXzZkR0bFubuWZjxC8pUgx/eTh8mczxxG5rhvrDv1RmP0W3MqwQ0kt1NV5v9W1ZLZyScuPQi2tVm8Cjw1f1pW7KlL3hR8h5S29MipkCgYEA6+KLO5gUslE+MaJxt8oTsAgGT7NcsvmWMX0zPmamwoUnX5XcUSlrz6QuxgG7sZpNHIvkeVAS0++Irs57UG/dVlrx/9p/IFOxMFw9u1Gue2mRJcYU20Bw80px0xpbOS6P50XPPi3hmFNyj+CPEt0k/SddopM4Hd2sKllCNXj7u5kCgYEAnY109sOYWznVbTGwrm8LVe5vH4b2l0LHYFtErLld+W9SpkwIE2xIVhbPUtI6cNEohz4feVp9JkKUlOUeAaEHuIE4qgHMyj87y/9gKo5p8A0nJLcUzma3sReh/rNrgQJosudOrsbh+P2IyiN6Y/rkYl22PW/bnjIQfDNA1aSq2FkCgYEA3+cqQmcZPinf3z1StCIcjfsQApc+ZqSC7HbrLVBC+mFp/lFBz8iBjZdKzqjWgL72cyJWvNBFDudP1p4obzG/5zhsfW/pO8Y1arIj5qqh9INAQ5rCMVv52vXPFZLvBFguQFkDXwIuIWkUVX3SURWZBrNXLfqQSckgoxIWxqsQSAECgYAHVeBto7YUd9g/HZsVq9DNc9jJsqyGmgGhvJ4oGddZ9mne1iEOMwIfi9SSKjtLBCkDjpwVjQaRZQ2If6b2w2kE4eRszpxmMEGu8p20vvqlU2Gv4UTJPm0TMxwg0hEFBsI4FomhPiBSwDyhYr1zZm3sHw936KYa4z4MLHaEPGYBdQ==
+  alipay-public-key: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAriMj704zULdtE0fsa/d6xNbIi13iv7np2rVeYUQfMRkb2hD+ZuyOV01Pj3ee0jLX3vkuTQNUdorX/xWeCzmPwg0WFTTfrHw3LESkTexV9A4pq3TLudf1h/RkmvAMxSwiAYqXUdoIocJ0K4+FJsdIyhKpIk+tmrI2hifb+k67hXwqYi2JXnKLRZR6qvtvEBAp58FDWR7/hS5tqy9NlV+kt0OtDoUVPDRDr8rB5Q+/oQQ64iiSK7ZJX6p1CHhrJvewoFvNWBA1cr1m9nqssVI70gkhW72aOtrMhgeNPIfFKToAuxHOkKglEYhEgcqX5/+wtIJbStqOoDxLrJjY7NlHgQIDAQAB
+  gateway-url: https://openapi-sandbox.dl.alipaydev.com/gateway.do
+  return-url: http://localhost:5173/pay/success
+  notify-url: http://localhost:8080/api/pay/notify
+
+# Knife4j
+knife4j:
+  enable: true
+  setting:
+    language: zh_cn

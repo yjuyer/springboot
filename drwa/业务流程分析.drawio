@@ -1,0 +1,238 @@
+<mxfile host="65bd71144e">
+    <diagram id="business-flow" name="新能源汽车租赁业务流程">
+        <mxGraphModel dx="1067" dy="1018" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="1200" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="title" value="&lt;b&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;新能源汽车租赁平台&lt;br&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;核心业务流程图&lt;/font&gt;&lt;/font&gt;&lt;/b&gt;" style="text;html=1;fontSize=20;align=center;verticalAlign=middle;" parent="1" vertex="1">
+                    <mxGeometry x="600" y="20" width="400" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="user-title" value="&lt;b&gt;👤 用户端业务流程&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4A90D9;strokeColor=#2E6BB5;fontColor=#ffffff;fontSize=14;shadow=1;arcSize=40;" vertex="1" parent="1">
+                    <mxGeometry x="50" y="90" width="180" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="start" value="" style="ellipse;fillColor=#000000;strokeColor=#000000;" vertex="1" parent="1">
+                    <mxGeometry x="110" y="160" width="30" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="start-label" value="开始" style="text;html=1;align=left;verticalAlign=middle;fontSize=11;" vertex="1" parent="1">
+                    <mxGeometry x="150" y="165" width="40" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="login" value="用户登录/注册" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D6E6F5;strokeColor=#4A90D9;fontColor=#2E6BB5;fontSize=11;arcSize=40;" parent="1" vertex="1">
+                    <mxGeometry x="75" y="210" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="e-login" style="endArrow=none;html=1;strokeColor=#4A90D9;strokeWidth=2;curved=1;" edge="1" parent="1" source="start" target="login">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="check-realname" value="是否&#xa;实名认证?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;fontColor=#333333;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="75" y="280" width="120" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="e-check1" style="endArrow=none;html=1;strokeColor=#4A90D9;strokeWidth=2;curved=1;" edge="1" parent="1" source="login" target="check-realname">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="realname" value="实名认证&#xa;(身份证OCR+活体检测)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E1D5E7;strokeColor=#9673A6;fontColor=#333333;fontSize=11;arcSize=40;" parent="1" vertex="1">
+                    <mxGeometry x="250" y="300" width="160" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="e-realname" value="否" style="endArrow=none;html=1;strokeColor=#B85450;strokeWidth=2;curved=1;fontSize=10;" edge="1" parent="1" source="check-realname" target="realname">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="browse" value="&lt;b&gt;浏览/搜索车辆&lt;/b&gt;&#xa;(品牌/价格/类型筛选)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;fontColor=#333333;fontSize=11;arcSize=40;" parent="1" vertex="1">
+                    <mxGeometry x="60" y="400" width="160" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="e-browse1" value="是" style="endArrow=none;html=1;strokeColor=#82B366;strokeWidth=2;curved=1;fontSize=10;" edge="1" parent="1" source="check-realname" target="browse">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e-browse2" style="endArrow=none;html=1;strokeColor=#82B366;strokeWidth=2;curved=1;" edge="1" parent="1" source="realname" target="browse">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="detail" value="查看车辆详情&#xa;(图片/配置/价格/门店)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;fontColor=#333333;fontSize=11;arcSize=40;" parent="1" vertex="1">
+                    <mxGeometry x="60" y="480" width="160" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="e-detail" style="endArrow=none;html=1;strokeColor=#82B366;strokeWidth=2;curved=1;" edge="1" parent="1" source="browse" target="detail">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="select" value="选择车辆&#xa;确认租赁信息" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;fontColor=#333333;fontSize=11;arcSize=40;" vertex="1" parent="1">
+                    <mxGeometry x="60" y="560" width="160" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="e-select" style="endArrow=none;html=1;strokeColor=#82B366;strokeWidth=2;curved=1;" edge="1" parent="1" source="detail" target="select">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="create-order" value="&lt;b&gt;创建租赁订单&lt;/b&gt;&#xa;(选择取还车门店/时间)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontColor=#333333;fontSize=11;arcSize=40;" parent="1" vertex="1">
+                    <mxGeometry x="60" y="640" width="170" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="e-create" style="endArrow=none;html=1;strokeColor=#6C8EBF;strokeWidth=2;curved=1;" edge="1" parent="1" source="select" target="create-order">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="check-stock" value="车辆&#xa;可用?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;fontColor=#333333;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="280" y="635" width="80" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="e-stock" style="endArrow=none;html=1;strokeColor=#D6B656;strokeWidth=2;curved=1;" edge="1" parent="1" source="create-order" target="check-stock">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="no-stock" value="暂无库存&#xa;请选择其他车辆" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F8CECC;strokeColor=#B85450;fontColor=#333333;fontSize=11;arcSize=40;" vertex="1" parent="1">
+                    <mxGeometry x="280" y="560" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="e-no-stock" value="否" style="endArrow=none;html=1;strokeColor=#B85450;strokeWidth=2;curved=1;fontSize=10;" edge="1" parent="1" source="check-stock" target="no-stock">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="redis-lock" value="Redis分布式锁&#xa;(防重复下单)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E1D5E7;strokeColor=#9673A6;fontColor=#333333;fontSize=11;arcSize=40;" parent="1" vertex="1">
+                    <mxGeometry x="260" y="730" width="130" height="45" as="geometry"/>
+                </mxCell>
+                <mxCell id="e-redis" value="是" style="endArrow=none;html=1;strokeColor=#82B366;strokeWidth=2;curved=1;fontSize=10;" edge="1" parent="1" source="check-stock" target="redis-lock">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="pay-deposit" value="&lt;b&gt;支付押金&lt;/b&gt;&#xa;(支付宝沙箱支付)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontColor=#333333;fontSize=11;arcSize=40;" parent="1" vertex="1">
+                    <mxGeometry x="260" y="800" width="140" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="e-deposit" style="endArrow=none;html=1;strokeColor=#6C8EBF;strokeWidth=2;curved=1;" edge="1" parent="1" source="redis-lock" target="pay-deposit">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="check-pay" value="支付&#xa;成功?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;fontColor=#333333;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="450" y="635" width="80" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="e-check-pay" style="endArrow=none;html=1;strokeColor=#D6B656;strokeWidth=2;curved=1;" edge="1" parent="1" source="pay-deposit" target="check-pay">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="pay-fail" value="支付失败&#xa;返回重试" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F8CECC;strokeColor=#B85450;fontColor=#333333;fontSize=11;arcSize=40;" parent="1" vertex="1">
+                    <mxGeometry x="580" y="645" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="e-fail" value="否" style="endArrow=none;html=1;strokeColor=#B85450;strokeWidth=2;curved=1;fontSize=10;" edge="1" parent="1" source="check-pay" target="pay-fail">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="order-status" value="订单状态机&#xa;(9种状态×9种事件)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E1D5E7;strokeColor=#9673A6;fontColor=#333333;fontSize=11;arcSize=40;" parent="1" vertex="1">
+                    <mxGeometry x="440" y="730" width="140" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="e-status" value="是" style="endArrow=none;html=1;strokeColor=#82B366;strokeWidth=2;curved=1;fontSize=10;" edge="1" parent="1" source="check-pay" target="order-status">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="pickup" value="&lt;b&gt;到店取车&lt;/b&gt;&#xa;(扫码确认)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;fontColor=#333333;fontSize=11;arcSize=40;" parent="1" vertex="1">
+                    <mxGeometry x="440" y="810" width="120" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="e-pickup" style="endArrow=none;html=1;strokeColor=#82B366;strokeWidth=2;curved=1;" edge="1" parent="1" source="order-status" target="pickup">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="using" value="使用中&#xa;(充电/报修可选)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;fontColor=#333333;fontSize=11;arcSize=40;" parent="1" vertex="1">
+                    <mxGeometry x="600" y="810" width="120" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="e-using" style="endArrow=none;html=1;strokeColor=#82B366;strokeWidth=2;curved=1;" edge="1" parent="1" source="pickup" target="using">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="return-car" value="&lt;b&gt;到店还车&lt;/b&gt;&#xa;(扫码确认)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;fontColor=#333333;fontSize=11;arcSize=40;" parent="1" vertex="1">
+                    <mxGeometry x="760" y="810" width="120" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="e-return" style="endArrow=none;html=1;strokeColor=#82B366;strokeWidth=2;curved=1;" edge="1" parent="1" source="using" target="return-car">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="settle" value="&lt;b&gt;费用结算&lt;/b&gt;&#xa;(租金+超时费+充电费)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontColor=#333333;fontSize=11;arcSize=40;" parent="1" vertex="1">
+                    <mxGeometry x="760" y="730" width="160" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="e-settle" style="endArrow=none;html=1;strokeColor=#6C8EBF;strokeWidth=2;curved=1;" edge="1" parent="1" source="return-car" target="settle">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="pay-rent" value="支付租金&#xa;(支付宝沙箱)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontColor=#333333;fontSize=11;arcSize=40;" parent="1" vertex="1">
+                    <mxGeometry x="760" y="650" width="130" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="e-pay-rent" style="endArrow=none;html=1;strokeColor=#6C8EBF;strokeWidth=2;curved=1;" edge="1" parent="1" source="settle" target="pay-rent">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="refund" value="押金退还&#xa;(原路退回)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontColor=#333333;fontSize=11;arcSize=40;" parent="1" vertex="1">
+                    <mxGeometry x="760" y="570" width="120" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="e-refund" style="endArrow=none;html=1;strokeColor=#6C8EBF;strokeWidth=2;curved=1;" edge="1" parent="1" source="pay-rent" target="refund">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="credit" value="信用积分更新&#xa;(加减分规则)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E1D5E7;strokeColor=#9673A6;fontColor=#333333;fontSize=11;arcSize=40;" parent="1" vertex="1">
+                    <mxGeometry x="760" y="490" width="130" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="e-credit" style="endArrow=none;html=1;strokeColor=#9673A6;strokeWidth=2;curved=1;" edge="1" parent="1" source="refund" target="credit">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="order-done" value="&lt;b&gt;订单完成&lt;/b&gt;&#xa;(可查看历史订单)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;fontColor=#333333;fontSize=11;arcSize=40;" parent="1" vertex="1">
+                    <mxGeometry x="760" y="410" width="140" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="e-done" style="endArrow=none;html=1;strokeColor=#82B366;strokeWidth=2;curved=1;" edge="1" parent="1" source="credit" target="order-done">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="end" value="" style="ellipse;fillColor=#000000;strokeColor=#000000;" vertex="1" parent="1">
+                    <mxGeometry x="810" y="350" width="30" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="end-label" value="结束" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;" vertex="1" parent="1">
+                    <mxGeometry x="800" y="320" width="50" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="e-end" style="endArrow=none;html=1;strokeColor=#000000;strokeWidth=2;curved=1;" edge="1" parent="1" source="order-done" target="end">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="admin-title" value="&lt;b&gt;👨‍💻 管理端业务流程&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FF6B6B;strokeColor=#CC0000;fontColor=#ffffff;fontSize=14;shadow=1;arcSize=40;" vertex="1" parent="1">
+                    <mxGeometry x="1050" y="90" width="180" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="admin-login" value="管理员登录&#xa;(JWT认证)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D6E6F5;strokeColor=#4A90D9;fontColor=#2E6BB5;fontSize=11;arcSize=40;" parent="1" vertex="1">
+                    <mxGeometry x="1080" y="160" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="check-perm" value="权限&#xa;验证?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;fontColor=#333333;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="1090" y="230" width="100" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="e-perm" style="endArrow=none;html=1;strokeColor=#D6B656;strokeWidth=2;curved=1;" edge="1" parent="1" source="admin-login" target="check-perm">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="vehicle-mgmt" value="&lt;b&gt;车辆管理&lt;/b&gt;&#xa;(上架/下架/维护)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;fontColor=#333333;fontSize=11;arcSize=40;" parent="1" vertex="1">
+                    <mxGeometry x="950" y="340" width="130" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="e-vmgmt" value="车辆管理" style="endArrow=none;html=1;strokeColor=#82B366;strokeWidth=2;curved=1;fontSize=10;" edge="1" parent="1" source="check-perm" target="vehicle-mgmt">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="store-mgmt" value="&lt;b&gt;门店管理&lt;/b&gt;&#xa;(门店信息/车辆调度)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;fontColor=#333333;fontSize=11;arcSize=40;" parent="1" vertex="1">
+                    <mxGeometry x="1120" y="340" width="140" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="e-smgmt" value="门店管理" style="endArrow=none;html=1;strokeColor=#82B366;strokeWidth=2;curved=1;fontSize=10;" edge="1" parent="1" source="check-perm" target="store-mgmt">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="order-mgmt" value="&lt;b&gt;订单管理&lt;/b&gt;&#xa;(审核/退款/状态变更)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;fontColor=#333333;fontSize=11;arcSize=40;" parent="1" vertex="1">
+                    <mxGeometry x="950" y="420" width="150" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="e-omgmt" style="endArrow=none;html=1;strokeColor=#82B366;strokeWidth=2;curved=1;" edge="1" parent="1" source="vehicle-mgmt" target="order-mgmt">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="charging-mgmt" value="&lt;b&gt;充电管理&lt;/b&gt;&#xa;(记录充电数据)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;fontColor=#333333;fontSize=11;arcSize=40;" parent="1" vertex="1">
+                    <mxGeometry x="1130" y="420" width="130" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="e-cmgmt" style="endArrow=none;html=1;strokeColor=#82B366;strokeWidth=2;curved=1;" edge="1" parent="1" source="store-mgmt" target="charging-mgmt">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="repair-mgmt" value="&lt;b&gt;维修管理&lt;/b&gt;&#xa;(故障上报/维修记录)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;fontColor=#333333;fontSize=11;arcSize=40;" parent="1" vertex="1">
+                    <mxGeometry x="950" y="500" width="150" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="e-rmgmt" style="endArrow=none;html=1;strokeColor=#82B366;strokeWidth=2;curved=1;" edge="1" parent="1" source="order-mgmt" target="repair-mgmt">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="user-mgmt" value="&lt;b&gt;用户管理&lt;/b&gt;&#xa;(实名审核/信用管理)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;fontColor=#333333;fontSize=11;arcSize=40;" parent="1" vertex="1">
+                    <mxGeometry x="1130" y="500" width="150" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="e-umgmt" style="endArrow=none;html=1;strokeColor=#82B366;strokeWidth=2;curved=1;" edge="1" parent="1" source="charging-mgmt" target="user-mgmt">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="dashboard" value="&lt;b&gt;数据统计&lt;/b&gt;&#xa;(Dashboard看板)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontColor=#333333;fontSize=11;arcSize=40;" parent="1" vertex="1">
+                    <mxGeometry x="1040" y="590" width="130" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="e-dash1" style="endArrow=none;html=1;strokeColor=#6C8EBF;strokeWidth=2;curved=1;" edge="1" parent="1" source="repair-mgmt" target="dashboard">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e-dash2" style="endArrow=none;html=1;strokeColor=#6C8EBF;strokeWidth=2;curved=1;" edge="1" parent="1" source="user-mgmt" target="dashboard">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="legend-title" value="&lt;b&gt;图例&lt;/b&gt;" style="text;html=1;fontSize=12;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="50" y="900" width="50" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="legend1" value="用户操作" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;fontSize=10;" parent="1" vertex="1">
+                    <mxGeometry x="50" y="930" width="70" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="legend2" value="系统处理" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E1D5E7;strokeColor=#9673A6;fontSize=10;" parent="1" vertex="1">
+                    <mxGeometry x="130" y="930" width="70" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="legend3" value="支付操作" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontSize=10;" parent="1" vertex="1">
+                    <mxGeometry x="210" y="930" width="70" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="legend4" value="判断条件" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;fontSize=10;" parent="1" vertex="1">
+                    <mxGeometry x="290" y="925" width="80" height="35" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

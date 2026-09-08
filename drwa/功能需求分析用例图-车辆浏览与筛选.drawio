@@ -1,0 +1,63 @@
+<mxfile host="65bd71144e">
+    <diagram id="vehicle-browse" name="车辆浏览与筛选模块">
+        <mxGraphModel dx="617" dy="643" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="boundary" value="车辆浏览与筛选模块" style="shape=uml.frame;whiteSpace=wrap;html=1;width=600;height=500;fillColor=#f5f5f5;strokeColor=#666666;fontStyle=1;fontSize=16;verticalAlign=top;" parent="1" vertex="1">
+                    <mxGeometry x="400" y="100" width="600" height="500" as="geometry"/>
+                </mxCell>
+                <mxCell id="actor_user" value="" style="shape=uml.actor;whiteSpace=wrap;html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;fillColor=#dae8fc;strokeColor=#6c8ebf;size=40;" parent="1" vertex="1">
+                    <mxGeometry x="220" y="300" width="60" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="actor_user_label" value="用户" style="text;html=1;align=center;verticalAlign=top;fontSize=14;fontStyle=1;" parent="1" vertex="1">
+                    <mxGeometry x="210" y="385" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="uc1" value="浏览车辆列表" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=13;" parent="1" vertex="1">
+                    <mxGeometry x="450" y="150" width="160" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="line1" style="edgeStyle=orthogonalEdgeStyle;" parent="1" source="actor_user" target="uc1" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="uc2" value="多条件组合筛选" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=13;" parent="1" vertex="1">
+                    <mxGeometry x="450" y="240" width="160" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="line2" style="edgeStyle=orthogonalEdgeStyle;" parent="1" source="actor_user" target="uc2" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="uc3" value="关键词搜索" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=13;" parent="1" vertex="1">
+                    <mxGeometry x="450" y="360" width="160" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="line3" style="edgeStyle=orthogonalEdgeStyle;" parent="1" source="actor_user" target="uc3" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="uc4" value="查看热门推荐" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=13;" parent="1" vertex="1">
+                    <mxGeometry x="450" y="450" width="160" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="line4" style="edgeStyle=orthogonalEdgeStyle;" parent="1" source="actor_user" target="uc4" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="uc5" value="查看车辆详情" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=13;" parent="1" vertex="1">
+                    <mxGeometry x="700" y="240" width="160" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="line5" style="edgeStyle=orthogonalEdgeStyle;" parent="1" source="actor_user" target="uc5" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="490" y="340"/>
+                            <mxPoint x="490" y="300"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="uc6" value="查看门店信息" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=13;" parent="1" vertex="1">
+                    <mxGeometry x="700" y="400" width="160" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="line6" style="edgeStyle=orthogonalEdgeStyle;" parent="1" source="actor_user" target="uc6" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="include1" value="&lt;&lt;include&gt;&gt;" style="dashed=1;endArrow=open;endSize=12;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="uc5" target="uc6" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

@@ -1,0 +1,53 @@
+package com.evrental.common.config;
+
+import com.evrental.common.security.JwtUtil;
+import lombok.RequiredArgsConstructor;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.http.server.ServerHttpRequest;
+import org.springframework.http.server.ServerHttpResponse;
+import org.springframework.http.server.ServletServerHttpRequest;
+import org.springframework.web.socket.WebSocketHandler;
+import org.springframework.web.socket.config.annotation.EnableWebSocket;
+import org.springframework.web.socket.config.annotation.WebSocketConfigurer;
+import org.springframework.web.socket.config.annotation.WebSocketHandlerRegistry;
+import org.springframework.web.socket.server.HandshakeInterceptor;
+
+import java.util.Map;
+
+/**
+ * WebSocket配置
+ * 实时通知推送（订单提醒、低电量预警等）
+ */
+@Configuration
+@EnableWebSocket
+@RequiredArgsConstructor
+public class WebSocketConfig implements WebSocketConfigurer {
+
+    private final NotificationHandler notificationHandler;
+    private final JwtUtil jwtUtil;
+
+    @Override
+    public void registerWebSocketHandlers(WebSocketHandlerRegistry registry) {
+        registry.addHandler(notificationHandler, "/ws/notification")
+                .addInterceptors(new HandshakeInterceptor() {
+                    @Override
+                    public boolean beforeHandshake(ServerHttpRequest request, ServerHttpResponse response,
+                                                   WebSocketHandler wsHandler, Map<String, Object> attributes) {
+                        if (request instanceof ServletServerHttpRequest sr) {
+                            String token = sr.getServletRequest().getParameter("token");
+                            if (token != null && jwtUtil.validate(token)) {
+                                attributes.put("userId", jwtUtil.getUserId(token));
+                                return true;
+                            }
+                        }
+                        return false;
+                    }
+
+                    @Override
+                    public void afterHandshake(ServerHttpRequest request, ServerHttpResponse response,
+                                               WebSocketHandler wsHandler, Exception exception) {
+                    }
+                })
+                .setAllowedOrigins("*");
+    }
+}

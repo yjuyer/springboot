@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-06-06T00:00:00.000Z" agent="Claude" version="21.0.0">
+  <diagram id="order-mgmt" name="租赁订单管理模块">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- 系统边界 -->
+        <mxCell id="boundary" value="租赁订单管理模块" style="shape=uml.frame;whiteSpace=wrap;html=1;width=700;height=550;fillColor=#f5f5f5;strokeColor=#666666;fontStyle=1;fontSize=16;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="350" y="80" width="700" height="550" as="geometry"/>
+        </mxCell>
+
+        <!-- 参与者：用户 -->
+        <mxCell id="actor_user" value="" style="shape=uml.actor;whiteSpace=wrap;html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;fillColor=#dae8fc;strokeColor=#6c8ebf;size=40;" vertex="1" parent="1">
+          <mxGeometry x="180" y="250" width="60" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="actor_user_label" value="用户" style="text;html=1;align=center;verticalAlign=top;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="170" y="335" width="80" height="30" as="geometry"/>
+        </mxCell>
+
+        <!-- 参与者：管理员 -->
+        <mxCell id="actor_admin" value="" style="shape=uml.actor;whiteSpace=wrap;html=1;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;fillColor=#fff2cc;strokeColor=#d6b656;size=40;" vertex="1" parent="1">
+          <mxGeometry x="1160" y="250" width="60" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="actor_admin_label" value="管理员" style="text;html=1;align=center;verticalAlign=top;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1145" y="335" width="90" height="30" as="geometry"/>
+        </mxCell>
+
+        <!-- 用例：创建租赁订单 -->
+        <mxCell id="uc1" value="创建租赁订单" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="420" y="120" width="160" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="l1" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="actor_user" target="uc1" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- 用例：取消订单 -->
+        <mxCell id="uc2" value="取消订单" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="420" y="210" width="160" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="l2" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="actor_user" target="uc2" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- 用例：查看订单列表 -->
+        <mxCell id="uc3" value="查看订单列表" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="420" y="300" width="160" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="l3" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="actor_user" target="uc3" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- 用例：查看订单详情 -->
+        <mxCell id="uc4" value="查看订单详情" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="420" y="390" width="160" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="l4" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="actor_user" target="uc4" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- 用例：申请还车 -->
+        <mxCell id="uc5" value="申请还车" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="420" y="480" width="160" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="l5" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="actor_user" target="uc5" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- 用例：确认取车 -->
+        <mxCell id="uc6" value="确认取车" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="780" y="180" width="160" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="l6" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="actor_admin" target="uc6" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- 用例：确认还车 -->
+        <mxCell id="uc7" value="确认还车" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="780" y="280" width="160" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="l7" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="actor_admin" target="uc7" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- 用例：查看所有订单 -->
+        <mxCell id="uc8" value="查看所有订单" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="780" y="380" width="160" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="l8" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="actor_admin" target="uc8" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- 用例：按条件筛选订单 -->
+        <mxCell id="uc9" value="按条件筛选订单" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="780" y="480" width="160" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="l9" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="actor_admin" target="uc9" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- <<extend>> 取消订单 扩展 创建订单 -->
+        <mxCell id="extend1" value="&lt;&lt;extend&gt;&gt;" style="dashed=1;endArrow=open;endSize=12;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" source="uc2" target="uc1" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- <<include>> 查看订单详情 包含 查看订单列表 -->
+        <mxCell id="include1" value="&lt;&lt;include&gt;&gt;" style="dashed=1;endArrow=open;endSize=12;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" source="uc4" target="uc3" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

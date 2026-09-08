@@ -1,0 +1,36 @@
+# IDE
+.idea/
+.vscode/
+
+# Node
+node_modules/
+dist/
+*.local
+
+# Env & secrets
+.env
+.env.*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build
+build/
+*.class
+*.jar
+target/
+
+# Logs
+*.log
+
+# 上传文件目录
+upload/
+uploads/
+
+# 数据库/缓存文件
+*.rdb
+
+# 临时文件
+tmp/
+*.tmp
